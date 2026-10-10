@@ -2,6 +2,7 @@
 #include<string.h>
 #include<math.h>
 #include <windows.h>
+#include <ctype.h>
 
 int main(){
     SetConsoleOutputCP(CP_UTF8);
@@ -21,27 +22,27 @@ int main(){
         printf("5. Sair\n");
         printf("Opção:\n");
         
-        int resposta;
-        double num1;
-        double num2;
+        char entrada_opcao[50];
+        int resposta = 0;
+        double num1, num2;
         
+     
+        scanf(" %s", entrada_opcao);
         
-        if (scanf(" %d", &resposta) != 1 || resposta < 1 || resposta > 5) {
+    
+        if (strlen(entrada_opcao) != 1 || entrada_opcao[0] < '1' || entrada_opcao[0] > '5') {
             printf("Opção inválida!\n\n");
-            
-            
-            while (getchar() != '\n'); 
-            
+            while (getchar() != '\n'); // Limpa qualquer sobra do teclado
             goto INICIO_MENU;
         }
-            
         
+        // Converte o caractere validado para número inteiro
+        resposta = entrada_opcao[0] - '0';
+            
         if (resposta == 5) {
-            respt = 'n';
             break;
         }
 
-        
         switch (resposta)
         {
             case 1: 
@@ -78,8 +79,18 @@ int main(){
                 break;
         }
 
-        printf("Deseja fazer outra operação? (s/n): \n");   
-        scanf(" %c", &respt);
+       
+        while (1) {
+            printf("Deseja fazer outra operação? (s/n): \n");   
+            scanf(" %c", &respt);
+            
+            if (respt == 's' || respt == 'S' || respt == 'n' || respt == 'N') {
+                break; 
+            } else {
+                printf("Opção inválida! Digite apenas 's' para sim ou 'n' para não.\n\n");
+                while (getchar() != '\n');
+            }
+        }
 
     } while(respt == 'S' || respt == 's');
    
