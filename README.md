@@ -1,0 +1,1 @@
+Calculadora em C: Feita com o aprendizado do Curso Introdução a Programação, da Neps Academy, utilizei funções de do-while e switch, a calculadora faz as 4 operações (soma, subtração, divisão e multiplicação) com 2 números e permite realizar outra operação logo após a primeira.
