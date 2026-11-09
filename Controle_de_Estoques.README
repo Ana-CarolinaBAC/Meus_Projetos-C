@@ -1,0 +1,10 @@
+Este Controle de estoques, programado em lingugem C, apresenta 3 funções básicas: 
+1. Adicionar Item
+2. Remover Item
+3. Listar Estoque
+
+Funciona através de comandos switch e uso das funções FILE, armazenando a lista de produtos em estoque em um arquivo de texto (inventory.txt)
+Em Breve, mais funcionalidades
+
+*Projeto elaborado como Conclusão do Curso de Alocação Dinâmica da NEPS Academy e Projeto final da SPRINT Behring Academy
+Criadora: Ana Carolina BAC
